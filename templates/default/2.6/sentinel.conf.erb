@@ -1,5 +1,13 @@
 # sentinel.conf
 
+# By default Sentinel will not be reachable from interfaces different than
+# localhost, either use the 'bind' directive to bind to a list of network
+# interfaces, or disable protected mode with "protected-mode no" by
+# adding it to this configuration file.
+<% if @new_resource.sentinel_bind %>
+bind <%= @new_resource.sentinel_bind %>
+<% end %>
+
 # port <sentinel-port>
 # The port that this sentinel instance will run on
 <% if @new_resource.sentinel_port %>

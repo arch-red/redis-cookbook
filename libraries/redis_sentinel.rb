@@ -51,6 +51,7 @@ module RedisCookbook
       attribute(:config_mode, kind_of: String, default: '0740')
 
       # @see: https://github.com/antirez/redis/blob/3.2/sentinel.conf
+      attribute(:sentinel_bind, kind_of: String, default: '127.0.0.1')
       attribute(:sentinel_port, kind_of: Integer, default: 26_379)
       attribute(:sentinel_master_name, kind_of: String, default: 'mymaster')
       attribute(:sentinel_monitor, kind_of: String, default: '127.0.0.1 6379 2')
